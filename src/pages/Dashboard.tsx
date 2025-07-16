@@ -16,7 +16,7 @@ export default function Dashboard() {
   })
 
   useEffect(() => {
-    // Simulate loading stats - in real app, this would fetch from database
+    // 模拟加载统计数据 - 在实际应用中，这将从数据库获取
     setStats({
       totalProducts: 156,
       totalProcurement: 89,
@@ -31,28 +31,28 @@ export default function Dashboard() {
 
   const statCards = [
     {
-      title: 'Total Products',
+      title: '产品总数',
       value: stats.totalProducts,
       icon: Package,
       color: 'text-blue-600',
       bgColor: 'bg-blue-50'
     },
     {
-      title: 'Procurement Orders',
+      title: '采购订单',
       value: stats.totalProcurement,
       icon: ShoppingCart,
       color: 'text-green-600',
       bgColor: 'bg-green-50'
     },
     {
-      title: 'Inventory Items',
+      title: '库存商品',
       value: stats.totalInventory,
       icon: Warehouse,
       color: 'text-purple-600',
       bgColor: 'bg-purple-50'
     },
     {
-      title: 'Customers',
+      title: '客户数量',
       value: stats.totalCustomers,
       icon: Users,
       color: 'text-orange-600',
@@ -62,20 +62,20 @@ export default function Dashboard() {
 
   const alertCards = [
     {
-      title: 'Low Stock Items',
+      title: '库存不足',
       value: stats.lowStockItems,
       icon: AlertTriangle,
       color: 'text-red-600',
       bgColor: 'bg-red-50',
-      description: 'Items need restocking'
+      description: '商品需要补货'
     },
     {
-      title: 'Pending Orders',
+      title: '待处理订单',
       value: stats.pendingOrders,
       icon: ShoppingCart,
       color: 'text-yellow-600',
       bgColor: 'bg-yellow-50',
-      description: 'Orders awaiting processing'
+      description: '订单等待处理'
     }
   ]
 
@@ -84,13 +84,13 @@ export default function Dashboard() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900">Dashboard</h1>
-          <p className="text-slate-600 mt-1">Welcome to your ERP management system</p>
+          <h1 className="text-3xl font-bold text-slate-900">仪表盘</h1>
+          <p className="text-slate-600 mt-1">欢迎使用您的ERP管理系统</p>
         </div>
         <div className="flex items-center space-x-2">
           <TrendingUp className="h-5 w-5 text-green-600" />
           <span className="text-sm font-medium text-green-600">
-            +{stats.monthlyGrowth}% this month
+            本月增长 +{stats.monthlyGrowth}%
           </span>
         </div>
       </div>
@@ -124,14 +124,14 @@ export default function Dashboard() {
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
             <DollarSign className="h-5 w-5 text-green-600" />
-            <span>Total Revenue</span>
+            <span>总收入</span>
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="text-4xl font-bold text-green-600">
-            ${stats.totalRevenue.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+            ¥{stats.totalRevenue.toLocaleString('zh-CN', { minimumFractionDigits: 2 })}
           </div>
-          <p className="text-slate-600 mt-2">Accumulated from all sales</p>
+          <p className="text-slate-600 mt-2">所有销售的累计收入</p>
         </CardContent>
       </Card>
 
@@ -152,7 +152,7 @@ export default function Dashboard() {
                     <p className="text-sm text-slate-600 mt-1">{alert.description}</p>
                   </div>
                   <Badge variant="destructive" className="text-xs">
-                    Action Required
+                    需要处理
                   </Badge>
                 </div>
               </CardContent>
@@ -164,29 +164,29 @@ export default function Dashboard() {
       {/* Quick Actions */}
       <Card>
         <CardHeader>
-          <CardTitle>Quick Actions</CardTitle>
+          <CardTitle>快速操作</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <button className="p-4 text-left border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
               <Package className="h-8 w-8 text-blue-600 mb-2" />
-              <h3 className="font-medium text-slate-900">Add Product</h3>
-              <p className="text-sm text-slate-600">Create new product entry</p>
+              <h3 className="font-medium text-slate-900">添加产品</h3>
+              <p className="text-sm text-slate-600">创建新产品条目</p>
             </button>
             <button className="p-4 text-left border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
               <ShoppingCart className="h-8 w-8 text-green-600 mb-2" />
-              <h3 className="font-medium text-slate-900">New Procurement</h3>
-              <p className="text-sm text-slate-600">Record new purchase</p>
+              <h3 className="font-medium text-slate-900">新采购</h3>
+              <p className="text-sm text-slate-600">记录新的采购</p>
             </button>
             <button className="p-4 text-left border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
               <Warehouse className="h-8 w-8 text-purple-600 mb-2" />
-              <h3 className="font-medium text-slate-900">Stock Update</h3>
-              <p className="text-sm text-slate-600">Update inventory levels</p>
+              <h3 className="font-medium text-slate-900">库存更新</h3>
+              <p className="text-sm text-slate-600">更新库存水平</p>
             </button>
             <button className="p-4 text-left border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
               <Users className="h-8 w-8 text-orange-600 mb-2" />
-              <h3 className="font-medium text-slate-900">Add Customer</h3>
-              <p className="text-sm text-slate-600">Register new customer</p>
+              <h3 className="font-medium text-slate-900">添加客户</h3>
+              <p className="text-sm text-slate-600">注册新客户</p>
             </button>
           </div>
         </CardContent>

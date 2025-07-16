@@ -29,7 +29,7 @@ function App() {
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-slate-600">Loading...</p>
+          <p className="text-slate-600">加载中...</p>
         </div>
       </div>
     )
@@ -39,13 +39,13 @@ function App() {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-slate-900 mb-4">E-commerce ERP System</h1>
-          <p className="text-slate-600 mb-8">Please sign in to access your ERP dashboard</p>
+          <h1 className="text-3xl font-bold text-slate-900 mb-4">电商ERP管理系统</h1>
+          <p className="text-slate-600 mb-8">请登录以访问您的ERP管理面板</p>
           <button
             onClick={() => blink.auth.login()}
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
           >
-            Sign In
+            登录
           </button>
         </div>
       </div>

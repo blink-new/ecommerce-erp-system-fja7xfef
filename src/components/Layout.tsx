@@ -26,14 +26,14 @@ import {
 import { Avatar, AvatarFallback } from './ui/avatar'
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
-  { name: 'Products', href: '/products', icon: Package },
-  { name: 'Procurement', href: '/procurement', icon: ShoppingCart },
-  { name: 'Inventory', href: '/inventory', icon: Warehouse },
-  { name: 'CRM', href: '/crm', icon: Users },
-  { name: 'Finance', href: '/finance', icon: DollarSign },
-  { name: 'Backup & Restore', href: '/backup', icon: Database },
-  { name: 'Settings', href: '/settings', icon: Settings },
+  { name: '仪表盘', href: '/dashboard', icon: LayoutDashboard },
+  { name: '产品管理', href: '/products', icon: Package },
+  { name: '采购管理', href: '/procurement', icon: ShoppingCart },
+  { name: '库存管理', href: '/inventory', icon: Warehouse },
+  { name: '客户管理', href: '/crm', icon: Users },
+  { name: '财务管理', href: '/finance', icon: DollarSign },
+  { name: '备份恢复', href: '/backup', icon: Database },
+  { name: '系统设置', href: '/settings', icon: Settings },
 ]
 
 interface LayoutProps {
@@ -56,7 +56,7 @@ export default function Layout({ user, children }: LayoutProps) {
         <div className="fixed inset-0 bg-slate-600 bg-opacity-75" onClick={() => setSidebarOpen(false)} />
         <div className="fixed inset-y-0 left-0 flex w-64 flex-col bg-white shadow-xl">
           <div className="flex h-16 items-center justify-between px-4 border-b border-slate-200">
-            <h1 className="text-xl font-bold text-slate-900">ERP System</h1>
+            <h1 className="text-xl font-bold text-slate-900">ERP管理系统</h1>
             <button
               onClick={() => setSidebarOpen(false)}
               className="text-slate-400 hover:text-slate-600"
@@ -92,7 +92,7 @@ export default function Layout({ user, children }: LayoutProps) {
       <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
         <div className="flex flex-col flex-grow bg-white border-r border-slate-200">
           <div className="flex h-16 items-center px-4 border-b border-slate-200">
-            <h1 className="text-xl font-bold text-slate-900">ERP System</h1>
+            <h1 className="text-xl font-bold text-slate-900">ERP管理系统</h1>
           </div>
           <nav className="flex-1 px-4 py-4 space-y-1">
             {navigation.map((item) => {
@@ -153,13 +153,13 @@ export default function Layout({ user, children }: LayoutProps) {
                   <DropdownMenuItem asChild>
                     <Link to="/settings" className="cursor-pointer">
                       <User className="mr-2 h-4 w-4" />
-                      Settings
+                      设置
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
                     <LogOut className="mr-2 h-4 w-4" />
-                    Log out
+                    退出登录
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
